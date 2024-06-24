@@ -1,13 +1,93 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Cyberway';
+    src: url(./fonts/CyberwayRiders-lg97d.ttf) format('opentype');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+    font-family: 'CpMono';
+    src: url(./fonts/CPMono_v07_Plain.otf) format('opentype');
 }
+
+@font-face {
+    font-family: 'CpMonoLight';
+    src: url(./fonts/CPMono_v07_Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'CpMonoBold';
+    src: url(./fonts/CPMono_v07_Bold.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'CpMonoBlack';
+    src: url(./fonts/CPMono_v07_Black.otf) format('opentype');
+}
+
+.background{
+    background-image:url(./components/assets/background.svg);
+    background-color: #0C0808;
+}
+.radial-background{
+    background: radial-gradient(circle, transparent,black 170%);
+}
+
+.home-background{
+    background-image: url(./components/assets/lines.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.feature-bg{
+    background-image: url(./components/assets/background-feature.svg);
+    opacity: 120%;
+    background-repeat: repeat-y;  
+}
+.background-l{
+    background-image: url(./components/assets/launch-bg.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.cut-button{
+    --border-width: .15em;
+    --edge-size:0.7em;
+    position:relative;
+    overflow:hidden;
+  
+
+  clip-path: polygon(
+      var(--border-width) calc(var(--edge-size) + var(--border-width) * 0.5),
+
+      calc(var(--edge-size) + var(--border-width) * 0.5) var(--border-width),
+
+      calc(100% - var(--border-width)) var(--border-width),
+
+      calc(100% - var(--border-width))
+        calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)),
+
+      calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5))
+        calc(100% - var(--border-width)),
+
+      calc(var(--border-width)) calc(100% - var(--border-width))
+    );
+}
+
+.styled-div {
+  --b: 2px; /* border thickness */
+  --c: #00000000 25%,#656565 0; /* define the color here */
+  background:
+    conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--c)) 0 0,
+    conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--c)) 100% 100%;
+  background-size: 10px 10px; /* adjust border length here */
+  
+  background-repeat: no-repeat;
+  transition: .6s;
+  cursor: pointer;
+  }
+  
+
+  
+
+  
